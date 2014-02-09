@@ -31,7 +31,7 @@ public:
   CDnsSeedOpts() : nThreads(96), nDnsThreads(4), nPort(53), mbox(NULL), ns(NULL), host(NULL), tor(NULL), fUseTestNet(false), fWipeBan(false), fWipeIgnore(false) {}
 
   void ParseCommandLine(int argc, char **argv) {
-    static const char *help = "Bitcoin-seeder\n"
+    static const char *help = "Quark-seeder\n"
                               "Usage: %s -h <host> -n <ns> [-m <mbox>] [-t <threads>] [-p <port>]\n"
                               "\n"
                               "Options:\n"
@@ -339,8 +339,8 @@ extern "C" void* ThreadStats(void*) {
   } while(1);
 }
 
-static const string mainnet_seeds[] = {"xxx-dnsseed.qrk.cc", ""};
-static const string testnet_seeds[] = {"xxx-testnet-dnsseed.qrk.cc", ""};
+static const string mainnet_seeds[] = {"seed1.qrk.cc", "seed1.qrkcoin.org", "seed1.quarkinvest.info", "qrk.no-ip.biz", ""};
+static const string testnet_seeds[] = {"testnet-seed.qrk.cc", ""};
 static const string *seeds = mainnet_seeds;
 
 extern "C" void* ThreadSeeder(void*) {
